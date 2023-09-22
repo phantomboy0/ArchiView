@@ -366,6 +366,8 @@
                 <TextBlock x:Name="welcometxt2_Copy2" HorizontalAlignment="Left" Height="40" Margin="48,334,0,0" Text="Change View by pressing view control buttons in the Right side." TextWrapping="Wrap" VerticalAlignment="Top" Width="511" TextAlignment="Center" FontSize="18" FontWeight="Normal" FontFamily="Segoe WP"/>
                 <Image HorizontalAlignment="Left" Height="60" Margin="248,20,0,0" VerticalAlignment="Top" Width="112" Source="/Images/ArchiView.png"/>
             </Grid>
+            <Button x:Name="Savebtn" Content="Save" HorizontalAlignment="Left" Height="17" Margin="388,390,0,0" VerticalAlignment="Top" Width="85" Click="Savebtn_Click" FontWeight="Normal" BorderBrush="{x:Null}" Background="#FF646464" Foreground="White" FontSize="10"/>
+            <Button x:Name="Loadbtn" Content="Load" HorizontalAlignment="Left" Height="17" Margin="388,407,0,0" VerticalAlignment="Top" Width="85" Click="Loadbtn_Click" FontWeight="Normal" BorderBrush="{x:Null}" Background="#FF646464" Foreground="White" FontSize="10"/>
         </Grid>
     </Viewbox>
 </Window>

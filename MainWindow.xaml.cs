@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
 using Microsoft.Win32;
 
 namespace ArchiView
@@ -64,37 +63,41 @@ namespace ArchiView
             //22 Front Left Bottom
             //23 Front Right Bottom
             //24 Back Left Bottm
-        //25 Back Rigt Bottom
-            SetUpFirtsImages(0, "pack://application:,,,/Images/Top.png");
-            SetUpFirtsImages(1, "pack://application:,,,/Images/Front.png");
-            SetUpFirtsImages(2, "pack://application:,,,/Images/Right.png");
-            SetUpFirtsImages(3, "pack://application:,,,/Images/Left.png");
-            SetUpFirtsImages(4, "pack://application:,,,/Images/Back.png");
-            SetUpFirtsImages(5, "pack://application:,,,/Images/Left_Front.png");
-            SetUpFirtsImages(6, "pack://application:,,,/Images/Right_Front.png");
-            SetUpFirtsImages(7, "pack://application:,,,/Images/Left_Back.png");
-            SetUpFirtsImages(8, "pack://application:,,,/Images/Right_Back.png");
-            SetUpFirtsImages(9, "pack://application:,,,/Images/Left_Front_Top.png");
-            SetUpFirtsImages(10, "pack://application:,,,/Images/Right_Front_Top.png");
-            SetUpFirtsImages(11, "pack://application:,,,/Images/Left_Back_Top.png");
-            SetUpFirtsImages(12, "pack://application:,,,/Images/Right_Back_Top.png");
-            SetUpFirtsImages(13, "pack://application:,,,/Images/Front_Top.png");
-            SetUpFirtsImages(14, "pack://application:,,,/Images/Left_Top.png");
-            SetUpFirtsImages(15, "pack://application:,,,/Images/Right_Top.png");
-            SetUpFirtsImages(16, "pack://application:,,,/Images/Back_Top.png");
-            SetUpFirtsImages(17, "pack://application:,,,/Images/Bottom.png");
-            SetUpFirtsImages(18, "pack://application:,,,/Images/Front_Bottom.png");
-            SetUpFirtsImages(19, "pack://application:,,,/Images/Left_Bottom.png");
-            SetUpFirtsImages(20, "pack://application:,,,/Images/Right_Bottom.png");
-            SetUpFirtsImages(21, "pack://application:,,,/Images/Back_Bottom.png");
-            SetUpFirtsImages(22 , "pack://application:,,,/Images/Front_Left_Bottom.png");
-            SetUpFirtsImages(23, "pack://application:,,,/Images/Front_Right_Bottom.png");
-            SetUpFirtsImages(24, "pack://application:,,,/Images/Back_Left_Bottom.png");
-            SetUpFirtsImages(25, "pack://application:,,,/Images/Back_Right_Bottom.png");
+            //25 Back Rigt Bottom
+            for (int i = 0; i < 9; i++)
+            {
+                SetUpFirtsImages(0,i, "pack://application:,,,/Images/Top.png");
+                SetUpFirtsImages(1, i, "pack://application:,,,/Images/Front.png");
+                SetUpFirtsImages(2, i, "pack://application:,,,/Images/Right.png");
+                SetUpFirtsImages(3, i, "pack://application:,,,/Images/Left.png");
+                SetUpFirtsImages(4, i, "pack://application:,,,/Images/Back.png");
+                SetUpFirtsImages(5, i, "pack://application:,,,/Images/Left_Front.png");
+                SetUpFirtsImages(6, i, "pack://application:,,,/Images/Right_Front.png");
+                SetUpFirtsImages(7, i, "pack://application:,,,/Images/Left_Back.png");
+                SetUpFirtsImages(8, i, "pack://application:,,,/Images/Right_Back.png");
+                SetUpFirtsImages(9, i, "pack://application:,,,/Images/Left_Front_Top.png");
+                SetUpFirtsImages(10, i, "pack://application:,,,/Images/Right_Front_Top.png");
+                SetUpFirtsImages(11, i, "pack://application:,,,/Images/Left_Back_Top.png");
+                SetUpFirtsImages(12, i, "pack://application:,,,/Images/Right_Back_Top.png");
+                SetUpFirtsImages(13, i, "pack://application:,,,/Images/Front_Top.png");
+                SetUpFirtsImages(14, i, "pack://application:,,,/Images/Left_Top.png");
+                SetUpFirtsImages(15, i, "pack://application:,,,/Images/Right_Top.png");
+                SetUpFirtsImages(16, i, "pack://application:,,,/Images/Back_Top.png");
+                SetUpFirtsImages(17, i, "pack://application:,,,/Images/Bottom.png");
+                SetUpFirtsImages(18, i, "pack://application:,,,/Images/Front_Bottom.png");
+                SetUpFirtsImages(19, i, "pack://application:,,,/Images/Left_Bottom.png");
+                SetUpFirtsImages(20, i, "pack://application:,,,/Images/Right_Bottom.png");
+                SetUpFirtsImages(21, i, "pack://application:,,,/Images/Back_Bottom.png");
+                SetUpFirtsImages(22, i, "pack://application:,,,/Images/Front_Left_Bottom.png");
+                SetUpFirtsImages(23, i, "pack://application:,,,/Images/Front_Right_Bottom.png");
+                SetUpFirtsImages(24, i, "pack://application:,,,/Images/Back_Left_Bottom.png");
+                SetUpFirtsImages(25, i, "pack://application:,,,/Images/Back_Right_Bottom.png");
+            }
+            
             
         }
 
-        void SetUpFirtsImages(int state,string Uri)
+        void SetUpFirtsImages(int state,int slot,string Uri)
         {
             BitmapImage bitimg = new();
             bitimg.BeginInit();
@@ -103,7 +106,7 @@ namespace ArchiView
             bitimg.EndInit();
 
             // bitmaps.Insert(ChoosedState, bitimg);
-            bitmaps[Slot.SelectedIndex,state] = bitimg;
+            bitmaps[slot,state] = bitimg;
         }
         bool hideWelcome = false;
         void SetImage (int State)
@@ -111,6 +114,76 @@ namespace ArchiView
             ImageBox.Source = bitmaps[Slot.SelectedIndex ,State];
             WelcomeGrid.Visibility = Visibility.Hidden;
             hideWelcome = true;
+
+        }
+        Microsoft.Win32.SaveFileDialog dialog = new();
+        public void SaveFile()
+        {
+            string file_path;
+            dialog.FileName = "ArchiView Format";
+            dialog.DefaultExt = ".txt";
+            dialog.Filter = "Text documents (.txt)|*txt";
+            Nullable<bool> result = dialog.ShowDialog();
+            file_path = dialog.FileName;
+            System.IO.StreamWriter SaveFile = new(file_path);
+
+            //SaveFile.WriteLine(" نام" + "       |       " + "تعداد" + "         |        " + "فی" + "      |      " + "قیمت کل");
+
+            for (int v = 0; v < 9; v++)
+            {
+                for (int i = 0; i < 25; i++)
+                {
+                    SaveFile.WriteLine(bitmaps[v, i]);
+                }
+            }
+           
+                
+            
+            
+
+            SaveFile.ToString();
+            SaveFile.Close();
+
+            MessageBox.Show("Saved!", "ArchiView", MessageBoxButton.OK);
+
+        }
+        Microsoft.Win32.OpenFileDialog Loaddialog = new();
+        public void LoadFile()
+        {
+            string file_path;
+            Loaddialog.FileName = "ArchiView Format";
+            Loaddialog.DefaultExt = ".txt";
+            Loaddialog.Filter = "Text documents (.txt)|*txt";
+            Nullable<bool> result = Loaddialog.ShowDialog();
+            file_path = Loaddialog.FileName;
+            //System.IO.StreamWriter SaveFile = new(file_path);
+            System.IO.StreamReader LoadFile = new(file_path);
+
+            
+
+            //SaveFile.WriteLine(" نام" + "       |       " + "تعداد" + "         |        " + "فی" + "      |      " + "قیمت کل");
+
+            for (int v = 0; v < 9; v++)
+            { 
+                for (int i = 0; i < 25; i++)
+                {
+                    
+                    SetUpFirtsImages(i,v, LoadFile.ReadLine());
+
+                }
+            }
+
+
+
+
+
+            //LoadFile.ToString();
+
+            LoadFile.Close();
+            SetImage(ChoosedState);
+
+          
+            MessageBox.Show("File Loaded!", "ArchiView", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
 
@@ -516,67 +589,67 @@ namespace ArchiView
             
             switch (ChoosedState) {
                 case 0:
-                    SetUpFirtsImages(0, "pack://application:,,,/Images/Top.png"); SetImage(ChoosedState);
+                    SetUpFirtsImages(0,Slot.SelectedIndex, "pack://application:,,,/Images/Top.png"); SetImage(ChoosedState);
                     break;
                 case 1:
-                    SetUpFirtsImages(1, "pack://application:,,,/Images/Front.png"); SetImage(ChoosedState);
+                    SetUpFirtsImages(1, Slot.SelectedIndex, "pack://application:,,,/Images/Front.png"); SetImage(ChoosedState);
                     break;
-                case 2: SetUpFirtsImages(2, "pack://application:,,,/Images/Right.png"); SetImage(ChoosedState); break;
-                case 3: SetUpFirtsImages(3, "pack://application:,,,/Images/Left.png"); SetImage(ChoosedState); break;
+                case 2: SetUpFirtsImages(2, Slot.SelectedIndex, "pack://application:,,,/Images/Right.png"); SetImage(ChoosedState); break;
+                case 3: SetUpFirtsImages(3, Slot.SelectedIndex, "pack://application:,,,/Images/Left.png"); SetImage(ChoosedState); break;
                 case 4:
-                    SetUpFirtsImages(4, "pack://application:,,,/Images/Back.png"); SetImage(ChoosedState);
+                    SetUpFirtsImages(4, Slot.SelectedIndex, "pack://application:,,,/Images/Back.png"); SetImage(ChoosedState);
                     break;
                 case 5:
-                    SetUpFirtsImages(5, "pack://application:,,,/Images/Left_Front.png"); SetImage(ChoosedState);
+                    SetUpFirtsImages(5, Slot.SelectedIndex, "pack://application:,,,/Images/Left_Front.png"); SetImage(ChoosedState);
                     break;
-                case 6: SetUpFirtsImages(6, "pack://application:,,,/Images/Right_Front.png"); SetImage(ChoosedState); break;
+                case 6: SetUpFirtsImages(6, Slot.SelectedIndex, "pack://application:,,,/Images/Right_Front.png"); SetImage(ChoosedState); break;
 
                 case 7:
-                    SetUpFirtsImages(7, "pack://application:,,,/Images/Left_Back.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(7, Slot.SelectedIndex, "pack://application:,,,/Images/Left_Back.png"); SetImage(ChoosedState); break;
                 case 8:
-                    SetUpFirtsImages(8, "pack://application:,,,/Images/Right_Back.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(8, Slot.SelectedIndex, "pack://application:,,,/Images/Right_Back.png"); SetImage(ChoosedState); break;
                 case 9:
-                    SetUpFirtsImages(9, "pack://application:,,,/Images/Left_Front_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(9, Slot.SelectedIndex, "pack://application:,,,/Images/Left_Front_Top.png"); SetImage(ChoosedState); break;
 
                 case 10:
-                    SetUpFirtsImages(10, "pack://application:,,,/Images/Right_Front_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(10, Slot.SelectedIndex, "pack://application:,,,/Images/Right_Front_Top.png"); SetImage(ChoosedState); break;
 
                 case 11:
-                    SetUpFirtsImages(11, "pack://application:,,,/Images/Left_Back_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(11, Slot.SelectedIndex, "pack://application:,,,/Images/Left_Back_Top.png"); SetImage(ChoosedState); break;
 
                 case 12:
-                    SetUpFirtsImages(12, "pack://application:,,,/Images/Right_Back_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(12, Slot.SelectedIndex, "pack://application:,,,/Images/Right_Back_Top.png"); SetImage(ChoosedState); break;
 
                 case 13:
-                    SetUpFirtsImages(13, "pack://application:,,,/Images/Front_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(13, Slot.SelectedIndex, "pack://application:,,,/Images/Front_Top.png"); SetImage(ChoosedState); break;
 
                 case 14:
-                    SetUpFirtsImages(14, "pack://application:,,,/Images/Left_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(14, Slot.SelectedIndex, "pack://application:,,,/Images/Left_Top.png"); SetImage(ChoosedState); break;
                 case 15:
-                    SetUpFirtsImages(15, "pack://application:,,,/Images/Right_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(15, Slot.SelectedIndex, "pack://application:,,,/Images/Right_Top.png"); SetImage(ChoosedState); break;
                 case 16:
-                    SetUpFirtsImages(16, "pack://application:,,,/Images/Back_Top.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(16, Slot.SelectedIndex, "pack://application:,,,/Images/Back_Top.png"); SetImage(ChoosedState); break;
                 case 17:
-                    SetUpFirtsImages(17, "pack://application:,,,/Images/Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(17, Slot.SelectedIndex, "pack://application:,,,/Images/Bottom.png"); SetImage(ChoosedState); break;
                 case 18:
-                    SetUpFirtsImages(18, "pack://application:,,,/Images/Front_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(18, Slot.SelectedIndex, "pack://application:,,,/Images/Front_Bottom.png"); SetImage(ChoosedState); break;
                 case 19:
-                    SetUpFirtsImages(19, "pack://application:,,,/Images/Left_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(19, Slot.SelectedIndex, "pack://application:,,,/Images/Left_Bottom.png"); SetImage(ChoosedState); break;
                 case 20:
-                    SetUpFirtsImages(20, "pack://application:,,,/Images/Right_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(20, Slot.SelectedIndex, "pack://application:,,,/Images/Right_Bottom.png"); SetImage(ChoosedState); break;
                 case 21:
-                    SetUpFirtsImages(21, "pack://application:,,,/Images/Back_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(21, Slot.SelectedIndex, "pack://application:,,,/Images/Back_Bottom.png"); SetImage(ChoosedState); break;
                 case 22:
-                    SetUpFirtsImages(22, "pack://application:,,,/Images/Front_Left_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(22, Slot.SelectedIndex, "pack://application:,,,/Images/Front_Left_Bottom.png"); SetImage(ChoosedState); break;
                 case 23:
-                    SetUpFirtsImages(23, "pack://application:,,,/Images/Front_Right_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(23, Slot.SelectedIndex, "pack://application:,,,/Images/Front_Right_Bottom.png"); SetImage(ChoosedState); break;
                 case 24:
-                    SetUpFirtsImages(24, "pack://application:,,,/Images/Back_Left_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(24, Slot.SelectedIndex, "pack://application:,,,/Images/Back_Left_Bottom.png"); SetImage(ChoosedState); break;
                 case 25:
-                    SetUpFirtsImages(25, "pack://application:,,,/Images/Back_Right_Bottom.png"); SetImage(ChoosedState); break;
+                    SetUpFirtsImages(25, Slot.SelectedIndex, "pack://application:,,,/Images/Back_Right_Bottom.png"); SetImage(ChoosedState); break;
 
                 default:
-                    SetUpFirtsImages(0, "pack://application:,,,/Images/Top.png"); SetImage(ChoosedState);
+                    SetUpFirtsImages(0, Slot.SelectedIndex, "pack://application:,,,/Images/Top.png"); SetImage(ChoosedState);
                     break;
 
                     
@@ -590,5 +663,19 @@ namespace ArchiView
             if (hideWelcome)
             SetImage(ChoosedState);
         }
+
+        private void Savebtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFile();
+        }
+
+        private void Loadbtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoadFile();
+        }
     }
-}
+
+   
+   
+
+    }

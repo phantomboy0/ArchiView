@@ -8,4 +8,5 @@ not only architects can use this, 3D modeling , construction and other people ca
 
 # ScreenShot
 ![image](https://github.com/phantomboy0/ArchiView/assets/94670323/f3489f70-ea92-49a6-b129-2d136614e03f)
-![image](https://github.com/phantomboy0/ArchiView/assets/94670323/7e449e32-4c0a-47fd-b44e-12f3bd9b25ff)
+![image](https://github.com/phantomboy0/ArchiView/assets/94670323/436cd007-83f6-4278-b093-b46453a16422)
+

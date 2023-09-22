@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchiView", "ArchiView.csproj", "{AAAF0432-D27B-436F-9DB6-5358D6153787}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAAF0432-D27B-436F-9DB6-5358D6153787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAF0432-D27B-436F-9DB6-5358D6153787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAF0432-D27B-436F-9DB6-5358D6153787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAF0432-D27B-436F-9DB6-5358D6153787}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C3704CF-95B4-4B60-B212-4ADD8D71CE57}
+	EndGlobalSection
+EndGlobal

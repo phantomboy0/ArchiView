@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\ArchiView.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\ArchiView.ico" />
+    <None Remove="Images\ArchiView.png" />
+    <None Remove="Images\Back.png" />
+    <None Remove="Images\Back_Bottom.png" />
+    <None Remove="Images\Back_Left_Bottom.png" />
+    <None Remove="Images\Back_Right_Bottom.png" />
+    <None Remove="Images\Back_Top.png" />
+    <None Remove="Images\Bottom.png" />
+    <None Remove="Images\Front.png" />
+    <None Remove="Images\Front_Bottom.png" />
+    <None Remove="Images\Front_Left_Bottom.png" />
+    <None Remove="Images\Front_Right_Bottom.png" />
+    <None Remove="Images\Front_Top.png" />
+    <None Remove="Images\Left.png" />
+    <None Remove="Images\Left_Back.png" />
+    <None Remove="Images\Left_Back_Top.png" />
+    <None Remove="Images\Left_Bottom.png" />
+    <None Remove="Images\Left_Front.png" />
+    <None Remove="Images\Left_Front_Top.png" />
+    <None Remove="Images\Left_Top.png" />
+    <None Remove="Images\Right.png" />
+    <None Remove="Images\Right_Back.png" />
+    <None Remove="Images\Right_Back_Top.png" />
+    <None Remove="Images\Right_Bottom.png" />
+    <None Remove="Images\Right_Front.png" />
+    <None Remove="Images\Right_Front_Top.png" />
+    <None Remove="Images\Right_Top.png" />
+    <None Remove="Images\Top.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\ArchiView.ico" />
+    <Resource Include="Images\ArchiView.png" />
+    <Resource Include="Images\Back.png" />
+    <Resource Include="Images\Back_Bottom.png" />
+    <Resource Include="Images\Back_Left_Bottom.png" />
+    <Resource Include="Images\Back_Right_Bottom.png" />
+    <Resource Include="Images\Back_Top.png" />
+    <Resource Include="Images\Bottom.png" />
+    <Resource Include="Images\Front.png" />
+    <Resource Include="Images\Front_Bottom.png" />
+    <Resource Include="Images\Front_Left_Bottom.png" />
+    <Resource Include="Images\Front_Right_Bottom.png" />
+    <Resource Include="Images\Front_Top.png" />
+    <Resource Include="Images\Left.png" />
+    <Resource Include="Images\Left_Back.png" />
+    <Resource Include="Images\Left_Back_Top.png" />
+    <Resource Include="Images\Left_Bottom.png" />
+    <Resource Include="Images\Left_Front.png" />
+    <Resource Include="Images\Left_Front_Top.png" />
+    <Resource Include="Images\Left_Top.png" />
+    <Resource Include="Images\Right.png" />
+    <Resource Include="Images\Right_Back.png" />
+    <Resource Include="Images\Right_Back_Top.png" />
+    <Resource Include="Images\Right_Bottom.png" />
+    <Resource Include="Images\Right_Front.png" />
+    <Resource Include="Images\Right_Front_Top.png" />
+    <Resource Include="Images\Right_Top.png" />
+    <Resource Include="Images\Top.png" />
+  </ItemGroup>
+
+</Project>

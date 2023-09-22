@@ -151,6 +151,15 @@ namespace ArchiView
             RBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
             RBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
 
+            Frontbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Frontbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Rightbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Rightbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Leftbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Leftbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Backbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            Backbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
             lastBtn = current;
         }
 
@@ -213,6 +222,7 @@ namespace ArchiView
             ChoosedState = 0;
             SetImage(ChoosedState);
             ChangeBtnColor(sender);
+           
         }
         
         private void Frontbtn_Click(object sender, RoutedEventArgs e)
@@ -220,6 +230,8 @@ namespace ArchiView
             ChoosedState = 1;
             ChangeBtnColor(sender);
             SetImage(ChoosedState);
+            Frontbtn.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            Frontbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
         }
         
         private void Rightbtn_Click(object sender, RoutedEventArgs e)
@@ -227,6 +239,8 @@ namespace ArchiView
             ChoosedState = 2;
             ChangeBtnColor(sender);
             SetImage(ChoosedState);
+            Rightbtn.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            Rightbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
         }
 
         private void Leftbtn_Click(object sender, RoutedEventArgs e)
@@ -234,6 +248,8 @@ namespace ArchiView
             ChoosedState = 3;
             ChangeBtnColor(sender);
             SetImage(ChoosedState);
+            Leftbtn.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            Leftbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
         }
 
        
@@ -243,6 +259,8 @@ namespace ArchiView
             ChoosedState = 4;
             ChangeBtnColor(sender);
             SetImage(ChoosedState);
+            Backbtn.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            Backbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
         }
 
         private void LFbtn_Copy_Click(object sender, RoutedEventArgs e)

@@ -138,6 +138,19 @@ namespace ArchiView
             LBbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
             LBbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
 
+            //
+            LFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            LBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
             lastBtn = current;
         }
 
@@ -164,7 +177,7 @@ namespace ArchiView
 
             OpenFileDialog dlg = new OpenFileDialog();
             //dlg.InitialDirectory = "c:\\";
-            dlg.Filter = "All Image Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.ico|PNG(*.png)|*.png|Image files (*.jpg)|*.jpg; *jpeg|All Files (*.*)|*.*";
+            dlg.Filter = "All Image Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff|PNG(*.png)|*.png|Image files (*.jpg)|*.jpg; *jpeg|All Files (*.*)|*.*";
             dlg.RestoreDirectory = true;
 
             if (dlg.ShowDialog() == true)
@@ -249,6 +262,19 @@ namespace ArchiView
             RBbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
             RBbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
 
+            //
+            LFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            LFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+
+            RFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            LBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
 
 
 
@@ -270,6 +296,18 @@ namespace ArchiView
 
             RBbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
             RBbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            //
+            LFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            RFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+
+            LBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
         }
 
         private void LBbtn_Copy_Click(object sender, RoutedEventArgs e)
@@ -288,6 +326,18 @@ namespace ArchiView
 
             RBbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
             RBbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            //
+            LFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            LBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            LBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+
+            RBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
         }
 
         private void RBbtn_Click(object sender, RoutedEventArgs e)
@@ -306,6 +356,18 @@ namespace ArchiView
 
             LBbtn_Copy.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
             LBbtn.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            //
+            LFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RFbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            RFbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            LBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+            LBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(221, 221, 221));
+
+            RBbtn_Copy1.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
+            RBbtn_Copy2.Background = new SolidColorBrush(Color.FromRgb(163, 229, 134));
 
 
         }

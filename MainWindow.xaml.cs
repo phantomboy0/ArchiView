@@ -28,7 +28,7 @@ namespace ArchiView
         }
         int ChoosedState = 0;
 
-        BitmapImage[,] bitmaps = new BitmapImage[9,26];
+        BitmapImage[,] bitmaps = new BitmapImage[10,26];
         
         
 
@@ -64,7 +64,7 @@ namespace ArchiView
             //23 Front Right Bottom
             //24 Back Left Bottm
             //25 Back Rigt Bottom
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 10; i++)
             {
                 SetUpFirtsImages(0,i, "pack://application:,,,/Images/Top.png");
                 SetUpFirtsImages(1, i, "pack://application:,,,/Images/Front.png");
@@ -120,9 +120,9 @@ namespace ArchiView
         public void SaveFile()
         {
             string file_path;
-            dialog.FileName = "ArchiView Format";
-            dialog.DefaultExt = ".txt";
-            dialog.Filter = "Text documents (.txt)|*txt";
+            dialog.FileName = "NewArchiView";
+            dialog.DefaultExt = ".avd";
+            dialog.Filter = "ArchiView Document (.avd)|*avd";
             Nullable<bool> result = dialog.ShowDialog();
             file_path = dialog.FileName;
             System.IO.StreamWriter SaveFile = new(file_path);
@@ -144,46 +144,54 @@ namespace ArchiView
             SaveFile.ToString();
             SaveFile.Close();
 
-            MessageBox.Show("Saved!", "ArchiView", MessageBoxButton.OK);
+            MessageBox.Show("File Saved!", "ArchiView", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
         Microsoft.Win32.OpenFileDialog Loaddialog = new();
         public void LoadFile()
         {
-            string file_path;
-            Loaddialog.FileName = "ArchiView Format";
-            Loaddialog.DefaultExt = ".txt";
-            Loaddialog.Filter = "Text documents (.txt)|*txt";
-            Nullable<bool> result = Loaddialog.ShowDialog();
-            file_path = Loaddialog.FileName;
-            //System.IO.StreamWriter SaveFile = new(file_path);
-            System.IO.StreamReader LoadFile = new(file_path);
+            try
+            {
+                string file_path;
+                Loaddialog.FileName = "";
+                Loaddialog.DefaultExt = ".avd";
+                Loaddialog.Filter = "ArchiView Document (.avd)|*avd";
+                Nullable<bool> result = Loaddialog.ShowDialog();
+                file_path = Loaddialog.FileName;
+                //System.IO.StreamWriter SaveFile = new(file_path);
+                System.IO.StreamReader LoadFile = new(file_path);
 
-            
 
-            //SaveFile.WriteLine(" نام" + "       |       " + "تعداد" + "         |        " + "فی" + "      |      " + "قیمت کل");
 
-            for (int v = 0; v < 9; v++)
-            { 
-                for (int i = 0; i < 25; i++)
+                //SaveFile.WriteLine(" نام" + "       |       " + "تعداد" + "         |        " + "فی" + "      |      " + "قیمت کل");
+
+                for (int v = 0; v < 9; v++)
                 {
-                    
-                    SetUpFirtsImages(i,v, LoadFile.ReadLine());
+                    for (int i = 0; i < 25; i++)
+                    {
 
+                        SetUpFirtsImages(i, v, LoadFile.ReadLine());
+
+                    }
                 }
+
+
+
+
+
+                //LoadFile.ToString();
+
+                LoadFile.Close();
+                SetImage(ChoosedState);
+
+
+                MessageBox.Show("File Loaded!", "ArchiView", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            catch(ArgumentException)
+            {
 
-
-
-
-
-            //LoadFile.ToString();
-
-            LoadFile.Close();
-            SetImage(ChoosedState);
-
-          
-            MessageBox.Show("File Loaded!", "ArchiView", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
 
         }
 
@@ -672,6 +680,13 @@ namespace ArchiView
         private void Loadbtn_Click(object sender, RoutedEventArgs e)
         {
             LoadFile();
+        }
+
+        private void Amirbtn_Click(object sender, RoutedEventArgs e)
+        {
+            string target = "https://github.com/phantomboy0";
+            System.Diagnostics.Process.Start("cmd", $"/C start {target}");
+            e.Handled = true;
         }
     }
 
